@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中埔</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bookblock.css" />
+    <!-- 景點介紹版面排版 -->
+    <link rel="stylesheet" type="text/css" href="css/demo5.css" />
+    <script src="js/modernizr.custom.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&display=swap');
+
+        * {
+            font-family: 'Noto Serif TC', serif;
+        }
+    </style>
+</head>
+
+<!-- Header -->
+<header id="header">
+    <h1><a href="#intro">中埔go!</a></h1>
+    <nav>
+        <ul>
+            <li><a href="#推薦路線">推薦路線</a></li>
+            <li><a href="#景點介紹">景點介紹</a></li>
+            <li><a href="#天氣預報">天氣預報</a></li>
+            <li><a href="#留言板">留言板</a></li>
+            <li></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <section id="intro">
+        <div id="banner">
+            <ul id="ul">
+                <li><img src='images/景點image/5_1.jpg' alt=''></li>
+                <li><img src='images/景點image/穀倉_星巴克.JPG' alt=''></li>
+                <li><img src='images/景點image/6_1.jpg' alt=''></li>
+                <li><img src='images/景點image/7_1.png' alt=''></li>
+                <li><img src='images/景點image/粉牛_穀倉.jpg' alt=''></li>
+                <li><img src='images/景點image/9_1.jpg' alt=''></li>
+                <li><img src='images/景點image/粉牛-貓屋.jpg' alt=''></li>
+                <li><img src='images/景點image/11_1.jpg' alt=''></li>
+                <li><img src='images/景點image/3_1.jpg' alt=''></li>
+                <li><img src='images/景點image/12_4.jpg' alt=''></li>
+                <li><img src='images/景點image/10_4.webp' alt=''></li>
+            </ul>
+
+            <span id="left" onclick="left()">&lt;</span>
+            <span id="right" onclick="right()">&gt;</span>
+        </div>
+        <div class="intro-content">
+            <header>
+                <h2>Hey.</h2>
+                <p>歡迎來到中埔，希望你有的好的旅程<br>
+                    更多資訊可參考
+                    <a target="_blank"
+                        href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwi5oMmavMaCAxUPf94KHYl2DFIQFnoECCgQAQ&url=https%3A%2F%2Fjhongpu.cyhg.gov.tw%2F&usg=AOvVaw1RPKSi9owWWcu7l5MUGfCU&opi=89978449">嘉義縣中埔鄉公所</a>.
+                </p>
+                <footer>
+                    <a class="more" id="openModalButton" alt="影片" title="點擊此查看介紹影片">Video</a>
+                </footer>
+
+        </div>
+        <!-- 跳出的小視窗-->
+        <div class="modal" id="myModal">
+            <div class="modal-content">
+                <span class="close" id="closeModal">&times;</span>
+
+                <video controls>
+                    <source src="images/影片.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="推薦路線">
+        <div class="container">
+            <h1>推薦路線</h1>
+           
+
+            <div class="map-recommend">
+                <div class="map">
+                    <div class="map-pic">
+                        <img src="images/中埔地圖.PNG" class="map-img">
+                        <!-- 標點svg -->
+                        <svg version="1.1" id="svg1" viewBox="0 0 1800 1300" sodipodi:docname="標點.svg">
+                            <g id="route-1">
+                                <!-- 路線1 -->
+                                <path
+                                    d="m 563.78976,231.91352 c 5.33134,3.99851 34.65374,26.65672 34.65374,26.65672 l 35.98658,7.99702 27.98957,-7.99702 39.98509,14.6612 23.99105,6.66418 14.6612,2.66567 7.99702,3.99852 m 37.31942,2.66567 59.97763,3.99851 5.33134,-1.33284 1.33284,26.65673 -1.33284,27.98956 -22.65822,34.65374 -19.99254,26.65673 10.66269,15.99404 -9.32985,9.32985 -2.66568,3.99851 31.98808,2.66567 45.31643,15.99404 39.98509,15.99403 9.32985,-2.66567 31.98808,11.99553 14.66119,6.66418 13.32837,27.98956 10.66271,15.99404 -13.32838,-21.32538 -3.99851,-18.65971 -22.65822,-11.99553 -31.98807,-11.99553 -10.66269,5.33135 -78.63735,-34.65374 -31.98807,-1.33284 v 2.66567 l -3.99851,11.99553 -6.66418,18.65971 -17.32687,10.66269 -21.32538,30.65523 -10.66269,17.32687 -9.32986,19.99255 -7.99701,63.97614 11.99552,31.98807 30.65524,38.65226 c 0,0 13.32836,6.66418 11.99553,11.99552 -1.33284,5.33135 23.99105,39.98509 23.99105,39.98509 l 42.65076,45.31644 42.65076,26.65672 26.65673,2.66568 14.6612,-11.99553 h 11.99553 l 13.32836,-27.98956 15.99403,13.32836 15.99404,-11.99553 22.65824,6.66418 14.6612,-9.32985 38.6522,19.99255 9.3299,-1.33284 31.9881,14.6612 5.3313,15.99403 -3.9985,14.6612 h -6.6642 l -1.3328,3.99851"
+                                    class="route" />
+                                <ellipse class="circle" cx="1017.32" cy="520.98608" rx="16.344082" ry="17.987413" />
+                                <ellipse class="circle" cx="763.95416" cy="292.96857" rx="16.344082" ry="17.987413" />
+                                <ellipse class="circle" cx="542.76331" cy="226.07352" rx="16.344082" ry="17.987413" />
+                                <ellipse class="circle" cx="1090.3926" cy="839.81415" rx="16.344082" ry="17.987413" />
+                                
+                            </g>
+                            <g id="route-2">
+                                <!-- 路線2 -->
+                                <path
+                                    d="m 607.88513,262.0032 19.79161,2.82738 31.1011,-7.53966 23.56144,13.1944 21.67652,3.76983 26.38881,6.59721 35.81339,4.71228 46.18042,5.65475 40.52568,2.82737 39.58322,-0.94246 39.58321,-3.76983 35.81339,-16.96423 16.96424,-6.59721 -5.65475,-16.96423 4.71229,16.96423 -51.83517,23.56144 -80.10889,1.88492 2.82737,41.46813 -10.36703,36.75585 -26.38881,32.04355 -3.76983,32.04356 -0.94246,7.53966 28.27373,-1.88491 23.56144,9.42457 25.44635,11.30949 29.21619,8.48212 16.02177,3.76983 29.21619,12.25195 25.44635,9.42458 -0.94245,4.71228 8.48211,20.73407 -13.1944,-27.33127 -34.87093,-13.19441 -59.37483,-18.84915 -49.00779,-18.84915 -27.33127,0.94246 0.94246,-41.46813 13.1944,-12.25195 h 35.81339 l 34.87093,1.88491 35.81339,0.94246 v 0"
+                                    class="route" />
+                                <ellipse class="circle" cx="1017.32" cy="520.98608" rx="16.344082" ry="17.987413" />
+                                <ellipse class="circle" cx="963.75519" cy="237.36357" rx="16.344082" ry="17.987413" />
+                                <ellipse class="circle" cx="593.65601" cy="247.75005" rx="16.344082" ry="17.987413" />
+                                <ellipse class="circle" cx="957.05341" cy="394.44937" rx="16.344082" ry="17.987413" />
+                            </g>
+                            <g id="route-3">
+                                <!-- 路線3 -->
+                                <path
+                                    d="m 563.58963,231.84456 16.96423,11.30949 8.48212,11.30949 19.79161,8.48212 21.67652,1.88492 18.84915,-4.71229 16.02178,1.88491 26.38881,7.53966 37.69831,8.48212 47.12288,9.42458 45.23796,2.82737 h 9.42458 9.42457 m 16.96423,24.50389 -3.76982,32.98602 -15.07933,26.38881 -24.50389,28.27373 4.71229,23.56144 -9.42458,9.42458 -5.65475,30.15864 -18.84915,19.79161 -18.84915,24.50389 -15.07932,20.73407 -9.42458,17.90669 -0.94245,10.36704 -0.94246,15.07932 m -2.82737,44.29551 4.71228,17.90669 11.3095,15.07932 22.61898,27.33127 11.30949,14.13686 12.25195,25.44636 15.07932,21.67652 16.96423,16.02178 20.73407,19.79161 15.07932,15.07932 13.19441,34.87093 -4.71229,25.44635 4.71229,18.84915 10.36703,16.02178 0.94245,18.84915 13.19442,-8.48211 c 10.41999,-3.70543 5.09727,20.13888 6.5972,32.04355 l -12.25195,-4.71228 -6.5972,17.90669 2.82737,17.90669 -0.94246,14.13687 2.82737,18.84915 9.42459,9.42458"
+                                    class="route " />
+                                <ellipse class="circle" cx="927.78656" cy="999.75452" rx="16.344082" ry="17.987413" />
+                                <ellipse class="circle" cx="858.315" cy="293.91101" rx="16.344082" ry="17.987413" />
+                                <ellipse class="circle" cx="541.70575" cy="225.24615" rx="16.344082" ry="17.987413" />
+                                <ellipse class="circle" cx="737.46082" cy="596.13531" rx="16.344082" ry="17.987413" />
+                            </g>
+                            <a href="#景點介紹" onclick="showContent(13)" data-page="13">
+                                <path
+                                    d="m 1090.8444,773.71134 c -0.9367,0.0271 -1.8716,0.11038 -2.7989,0.24609 -12.3637,1.80955 -23.3729,13.02141 -19.0117,27.03125 2.4202,7.77459 20.1669,43.0647 21.666,43.08399 0.3525,0.005 3.2967,-4.82971 6.543,-10.74219 17.7836,-32.38982 19.575,-40.34177 11.4941,-51.04883 -4.6955,-6.22152 -11.3361,-8.76029 -17.8925,-8.57031 z m -0.4844,8.36914 c 14.7611,0 19.2131,19.00479 5.8711,25.0625 -4.9197,2.2337 -6.1642,2.29815 -10.2207,0.53125 -13.1316,-5.71974 -9.7543,-25.59375 4.3496,-25.59375 z"
+                                    class="map-path" data-info="中崙溫泉" data-image="images/景點image/13_1.jpg" />
+                            </a>
+                            <a href="#景點介紹" onclick="showContent(12)" data-page="12">
+                                <path
+                                    d="m 266.28516,281.63086 c -0.93664,0.0271 -1.87155,0.11038 -2.79883,0.24609 -12.36376,1.80955 -23.37295,13.02141 -19.01172,27.03125 2.4202,7.77459 20.16689,43.0647 21.66601,43.08399 0.35249,0.005 3.29673,-4.82971 6.54297,-10.74219 17.78366,-32.38982 19.57503,-40.34177 11.49414,-51.04883 -4.69553,-6.22152 -11.33615,-8.76029 -17.89257,-8.57031 z M 265.80078,290 c 14.76111,0 19.21313,19.00479 5.87109,25.0625 -4.91967,2.2337 -6.1642,2.29815 -10.2207,0.53125 C 248.31961,309.87401 251.6969,290 265.80078,290 Z"
+                                    class="map-path" data-info="Picgather 吾友野事" data-image="images/景點image/12_1.webp" />
+                            </a>
+                            <a href="#景點介紹" onclick="showContent(11)" data-page="11">
+                                <path
+                                    d="m 420.27114,78.208363 c -0.93664,0.0271 -1.87155,0.11038 -2.79883,0.24609 -12.36376,1.80955 -23.37295,13.02141 -19.01172,27.031247 2.4202,7.77459 20.16689,43.0647 21.66601,43.08399 0.35249,0.005 3.29673,-4.82971 6.54297,-10.74219 17.78366,-32.38982 19.57503,-40.341767 11.49414,-51.048827 -4.69553,-6.22152 -11.33615,-8.76029 -17.89257,-8.57031 z m -0.48438,8.36914 c 14.76111,0 19.21313,19.004787 5.87109,25.062497 -4.91967,2.2337 -6.1642,2.29815 -10.2207,0.53125 -13.13156,-5.71974 -9.75427,-25.593747 4.34961,-25.593747 z"
+                                    class="map-path" data-info="八掌溪畔黃金風鈴花" data-image="images/景點image/11_1.jpg" />
+                            </a>
+                            <a href="#景點介紹" onclick="showContent(10)" data-page="10">
+                                <path
+                                    d="m 542.18391,161.67992 c -0.93664,0.0271 -1.87155,0.11038 -2.79883,0.24609 -12.36376,1.80955 -23.37295,13.02141 -19.01172,27.03125 2.4202,7.77459 20.16689,43.0647 21.66601,43.08399 0.35249,0.005 3.29673,-4.82971 6.54297,-10.74219 17.78366,-32.38982 19.57503,-40.34177 11.49414,-51.04883 -4.69553,-6.22152 -11.33615,-8.76029 -17.89257,-8.57031 z m -0.48438,8.36914 c 14.76111,0 19.21313,19.00479 5.87109,25.0625 -4.91967,2.2337 -6.1642,2.29815 -10.2207,0.53125 -13.13156,-5.71974 -9.75427,-25.59375 4.34961,-25.59375 z"
+                                    class="map-path" data-info="蔡大頭甕烤雞" data-image="images/景點image/10_1.jpg" />
+                            </a>
+                            <a href="#景點介紹" onclick="showContent(9)" data-page="9">
+                                <path
+                                    d="m 594.16495,183.03643 c -0.93664,0.0271 -1.87155,0.11038 -2.79883,0.24609 -12.36376,1.80955 -23.37295,13.02141 -19.01172,27.03125 2.4202,7.77459 20.16689,43.0647 21.66601,43.08399 0.35249,0.005 3.29673,-4.82971 6.54297,-10.74219 17.78366,-32.38982 19.57503,-40.34177 11.49414,-51.04883 -4.69553,-6.22152 -11.33615,-8.76029 -17.89257,-8.57031 z m -0.48438,8.36914 c 14.76111,0 19.21313,19.00479 5.87109,25.0625 -4.91967,2.2337 -6.1642,2.29815 -10.2207,0.53125 -13.13156,-5.71974 -9.75427,-25.59375 4.34961,-25.59375 z"
+                                    class="map-path" data-info="中埔穀倉農創園區" data-image="images/景點image/9_1.JPG" />
+                            </a>
+                            <a href="#景點介紹" onclick="showContent(8)" data-page="8">
+                                <path
+                                    d="m 764.26866,229.73302 c -0.9367,0.0271 -1.8716,0.11038 -2.7989,0.24609 -12.3637,1.80955 -23.3729,13.02141 -19.0117,27.03125 2.4202,7.77459 20.1669,43.0647 21.666,43.08399 0.3525,0.005 3.2967,-4.82971 6.543,-10.74219 17.7836,-32.38982 19.575,-40.34177 11.4941,-51.04883 -4.6955,-6.22152 -11.3361,-8.76029 -17.8925,-8.57031 z m -0.4844,8.36914 c 14.7611,0 19.2131,19.00479 5.8711,25.0625 -4.9197,2.2337 -6.1642,2.29815 -10.2207,0.53125 -13.1316,-5.71974 -9.7543,-25.59375 4.3496,-25.59375 z"
+                                    class="map-path" data-info="果然茶香觀光園區" data-image="images/景點image/8_1.JPG" />
+                            </a>
+                            <a href="#景點介紹" onclick="showContent(7)" data-page="7">
+                                <path
+                                    d="m 857.4089,229.78991 c -0.9366,0.0271 -1.8715,0.11038 -2.7988,0.24609 -12.3637,1.80955 -23.3729,13.02141 -19.0117,27.03125 2.4202,7.77459 20.1669,43.0647 21.666,43.08399 0.3525,0.005 3.2967,-4.82971 6.543,-10.74219 17.7836,-32.38982 19.575,-40.34177 11.4941,-51.04883 -4.6955,-6.22152 -11.3361,-8.76029 -17.8926,-8.57031 z m -0.4843,8.36914 c 14.7611,0 19.2131,19.00479 5.8711,25.0625 -4.9197,2.2337 -6.1642,2.29815 -10.2207,0.53125 -13.1316,-5.71974 -9.7543,-25.59375 4.3496,-25.59375 z"
+                                    class="map-path" data-info="中埔阿婆烤玉米" data-image="images/景點image/7_1.png" />
+                            </a>
+                            <a href="#景點介紹" onclick="showContent(6)" data-page="6">
+                                <path
+                                    d="m 963.78315,172.00988 c -0.93664,0.0271 -1.87155,0.11038 -2.79883,0.24609 -12.36376,1.80955 -23.37295,13.02141 -19.01172,27.03125 2.4202,7.77459 20.16689,43.0647 21.66601,43.08399 0.35249,0.005 3.29673,-4.82971 6.54297,-10.74219 17.78366,-32.38982 19.57503,-40.34177 11.49414,-51.04883 -4.69553,-6.22152 -11.33615,-8.76029 -17.89257,-8.57031 z m -0.48438,8.36914 c 14.76111,0 19.21313,19.00479 5.87109,25.0625 -4.91967,2.2337 -6.1642,2.29815 -10.2207,0.53125 -13.13156,-5.71974 -9.75427,-25.59375 4.34961,-25.59375 z"
+                                    class="map-path" data-info="旭嶺農場" data-image="images/景點image/6_1.jpg" />
+                            </a>
+                            <a href="#景點介紹" onclick="showContent(5)" data-page="5">
+                                <path
+                                    d="m 956.78315,329.65337 c -0.93664,0.0271 -1.87155,0.11038 -2.79883,0.24609 -12.36376,1.80955 -23.37295,13.02141 -19.01172,27.03125 2.4202,7.77459 20.16689,43.0647 21.66601,43.08399 0.35249,0.005 3.29673,-4.82971 6.54297,-10.74219 17.78366,-32.38982 19.57503,-40.34177 11.49414,-51.04883 -4.69553,-6.22152 -11.33615,-8.76029 -17.89257,-8.57031 z m -0.48438,8.36914 c 14.76111,0 19.21313,19.00479 5.87109,25.0625 -4.91967,2.2337 -6.1642,2.29815 -10.2207,0.53125 -13.13156,-5.71974 -9.75427,-25.59375 4.34961,-25.59375 z"
+                                    class="map-path" data-info="粉牛樂園" data-image="images/景點image/5_1.jpg" />
+                            </a>
+                            <a href="#景點介紹" onclick="showContent(4)" data-page="4">
+                                <path
+                                    d="m 1018.7831,455.36639 c -0.9366,0.0271 -1.8715,0.11038 -2.7988,0.24609 -12.3637,1.80955 -23.37293,13.02141 -19.0117,27.03125 2.4202,7.77459 20.1669,43.0647 21.666,43.08399 0.3525,0.005 3.2967,-4.82971 6.543,-10.74219 17.7836,-32.38982 19.575,-40.34177 11.4941,-51.04883 -4.6955,-6.22152 -11.3361,-8.76029 -17.8926,-8.57031 z m -0.4843,8.36914 c 14.7611,0 19.2131,19.00479 5.8711,25.0625 -4.9197,2.2337 -6.1642,2.29815 -10.2207,0.53125 -13.1316,-5.71974 -9.7543,-25.59375 4.3496,-25.59375 z"
+                                    class="map-path" data-info="獨角仙休閒農場" data-image="images/景點image/4_1.jpg" />
+                            </a>
+                            <a href="#景點介紹" onclick="showContent(3)" data-page="3">
+                                <path
+                                    d="m 738.64161,533.06045 c -0.9367,0.0271 -1.8716,0.11038 -2.7989,0.24609 -12.3637,1.80955 -23.3729,13.02141 -19.0117,27.03125 2.4202,7.77459 20.1669,43.0647 21.666,43.08399 0.3525,0.005 3.2967,-4.82971 6.543,-10.74219 17.7836,-32.38982 19.575,-40.34177 11.4941,-51.04883 -4.6955,-6.22152 -11.3361,-8.76029 -17.8925,-8.57031 z m -0.4844,8.36914 c 14.7611,0 19.2131,19.00479 5.8711,25.0625 -4.9197,2.2337 -6.1642,2.29815 -10.2207,0.53125 -13.1316,-5.71974 -9.7543,-25.59375 4.3496,-25.59375 z"
+                                    class="map-path" data-info="鈴蘭碗粿" data-image="images/景點image/3_1.jpg" />
+                            </a>
+                            <a href="#景點介紹" onclick="showContent(2)" data-page="2">
+                                <path
+                                    d="m 821.78315,713.00988 c -0.93664,0.0271 -1.87155,0.11038 -2.79883,0.24609 -12.36376,1.80955 -23.37295,13.02141 -19.01172,27.03125 2.4202,7.77459 20.16689,43.0647 21.66601,43.08399 0.35249,0.005 3.29673,-4.82971 6.54297,-10.74219 17.78366,-32.38982 19.57503,-40.34177 11.49414,-51.04883 -4.69553,-6.22152 -11.33615,-8.76029 -17.89257,-8.57031 z m -0.48438,8.36914 c 14.76111,0 19.21313,19.00479 5.87109,25.0625 -4.91967,2.2337 -6.1642,2.29815 -10.2207,0.53125 -13.13156,-5.71974 -9.75427,-25.59375 4.34961,-25.59375 z"
+                                    class="map-path" data-info="築夢森居" data-image="images/景點image/2_1.jpg" />
+                            </a>
+                            <a href="#景點介紹" onclick="showContent(1)" data-page="1">
+                                <path
+                                    d="m 928.13966,934.00988 c -0.93664,0.0271 -1.87155,0.11038 -2.79883,0.24609 -12.36376,1.80955 -23.37295,13.02141 -19.01172,27.03125 2.4202,7.77459 20.16689,43.06468 21.66601,43.08398 0.35249,0 3.29673,-4.8297 6.54297,-10.74218 17.78366,-32.38982 19.57503,-40.34177 11.49414,-51.04883 -4.69553,-6.22152 -11.33615,-8.76029 -17.89257,-8.57031 z m -0.48438,8.36914 c 14.76111,0 19.21313,19.00479 5.87109,25.0625 -4.91967,2.2337 -6.1642,2.29815 -10.2207,0.53125 -13.13156,-5.71974 -9.75427,-25.59375 4.34961,-25.59375 z"
+                                    class="map-path" data-info="一品咖啡莊園" data-image="images/景點image/1_1.jpg" />
+                            </a>
+                        </svg>
+                    </div>
+                    <!-- 景點簡單資訊 -->
+                    <div id="region-info">
+                        <div id="info-content">
+                            <div id="info-text"></div>
+                            <div class="separator"></div>
+                            <img id="info-image" src="" alt="Region Image">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recommend">
+                    <div class="router">
+                        <ul>
+                            <li id="content1" onmouseover="showRouteContent(1)">親子同樂</li>
+                            <li id="content2" onmouseover="showRouteContent(2)">農場特搜</li>
+                            <li id="content3" onmouseover="showRouteContent(3)">美食錦集</li>
+                        </ul>
+                    </div>
+                    <div class="content-window">
+                        <div id="content1Text" class="content-text">
+
+                            <ul>
+                                <li>
+                                    <h3>第一站：蔡大頭甕烤雞</h3>
+                                    <p1>位於中埔交流道出口處，剛到中埔可以先在蔡大頭甕烤雞吃午餐，內為寬敞圓桌，方便大人帶著小孩一起吃飯，且吃飽喝足後才有力氣繼續後面的行程。</p1>
+                                </li>
+                                <li>
+                                    <h3>第二站：果然茶香觀光園區</h3>
+                                    <p1>從兒童遊戲池到採摘芭樂，適合親子一起同樂度過優閒的下午，門票100元還可全額折抵消費，讓你可以帶著伴手禮回去送給親朋好友。</p1>
+                                </li>
+                                <li>
+                                    <h3>第三站：獨角仙休閒農場</h3>
+                                    <p1>有寬敞草原可以讓孩子們在其上奔跑或是滑草，還有許多親子設施可供遊玩，園區內動物也有提供餵食活動，適合全家一起放假踏青。</p1>
+                                </li>
+                                <li>
+                                    <h3>第四站：中崙溫泉</h3>
+                                    <p1>結束一天的行程，可以在這放鬆身心、消除疲憊，與家人共度美好時光。</p1>
+                                </li>
+                                <li>
+                                    <h3>適合出遊方式：</h3>
+                                    <p1>景點皆有便利的停車空間，最適合帶著孩子全家一起自駕遊，自己掌握時間景點的安排。</p1>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content-window">
+                        <div id="content2Text" class="content-text">
+
+                            <ul>
+                                <li>
+                                    <h3>第一站：中埔穀倉農創園區</h3>
+                                    <p1>全台唯一老穀倉星巴克,在最內角的地方真的有保留老穀倉原始的樣貌，用最簡單的方式去呈現。</p1>
+                                </li>
+                                <li>
+                                    <h3>第二站：旭嶺農場</h3>
+                                    <p1>全台黑木耳的最大產區，可體驗摘木耳喔！</p1>
+                                </li>
+                                <li>
+                                    <h3>第三站：粉牛樂園</h3>
+                                    <p1>園區內有可愛動物區，還有專門規畫給貓咪的貓屋，整體布置粉嫩繽紛，在整修後更是適合網美前去打卡拍照。</p1>
+                                </li>
+                                <li>
+                                    <h3>第四站：獨角仙休閒農場</h3>
+                                    <p1>寬敞的草原，諾大的園區，最適合優閒的午後，還有可愛動物可供餵食。</p1>
+                                </li>
+                                <li>
+                                    <h3>適合出遊方式：</h3>
+                                    <p1>三五好友結伴開車出遊，自由安排農場踩點行程，農牧路線皆能一併享有。</p1>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content-window">
+                        <div id="content3Text" class="content-text">
+
+                            <ul>
+                                <li>
+                                    <h3>第一站：蔡大頭甕烤雞</h3>
+                                    <p1>砂鍋魚頭、甕烤雞、苦茶油雞、筍絲焢肉都是蔡大頭甕烤雞必點的招牌餐點，不論是甕烤雞酥脆的外皮還是清甜爽口的筍絲，都很值得親自體驗，但餐點份量不小，建議多人一起來吃比較好點餐。
+                                    </p1>
+                                </li>
+                                <li>
+                                    <h3>第二站：中埔阿婆烤玉米</h3>
+                                    <p1>老字號阿婆烤玉米，使用古早炭火慢火燒烤，翻烤途中刷上豬油讓玉米吃起來不乾澀，特製醬汁以及特調粉末更是提升了烤玉米的香氣。</p1>
+                                </li>
+                                <li>
+                                    <h3>第三站：鈴蘭碗粿</h3>
+                                    <p1>碗粿口感Q彈，米香濃郁，內餡料也相當豐富，除了傳統碗粿外，還有獨具特色的黑糖碗粿及珍珠奶茶碗粿等。</p1>
+                                </li>
+                                <li>
+                                    <h3>第四站：一品咖啡莊園</h3>
+                                    <p1>從咖啡的種植到後製，皆秉持著細心呵護咖啡品質並且專業控管所有可能變因，所產出的咖啡正是符合其店名稱的一品咖啡。</p1>
+                                </li>
+                                <li>
+                                    <h3>適合出遊方式：</h3>
+                                    <p1>因為阿婆烤玉米附近停車不便，建議以機車為主要交通方式，才能品嘗到饕客們的極致饗宴。</p1>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <a href="#景點介紹" class="button style2 down anchored">Next</a>
+    </section>
+    <section id="景點介紹">
+        <div class="container">
+            <h1>景點介紹</h1>
+            <div class="spotcontent">
+            <div class="main clearfix">
+                <ul class="bb-custom-grid" id="bb-custom-grid">
+                    <li class="content active" id="page1">
+                        <h3><br></h3>
+                        <div class="bb-bookblock">
+                            <div class="bb-item"><img src="images/景點image/1_1.jpg" alt="image01" /></div>
+                            <div class="bb-item"><img src="images/景點image/1_2.jpg" alt="image02" /></div>
+                            <div class="bb-item"><img src="images/景點image/1_3.jpg" alt="image03" /></div>
+                            <div class="bb-item"><img src="images/景點image/1_4.jpg" alt="image04" /></div>
+                        </div>
+
+                        <div class="caption-container">
+                            <div class="caption">
+                                <a href="https://www.chiayum.com.tw/store/tradmaker/034" target="_blank">
+                                    <h4>一品咖啡莊園</h4>
+                                </a>
+                                <a href="https://maps.app.goo.gl/Kewauta6kzL46SCi7" target="_blank">
+                                    <h5>606嘉義縣中埔鄉28號(預約制)</h5>
+                                </a>
+                                <h6>
+                                    　　位於嘉義縣中埔鄉境『凍仔頂山』海拔1180公尺的『一品咖啡莊園』，午後咖啡園長年雲霧繚繞，平均日照短，日夜溫差大，正是得天獨厚的天候變化，讓咖啡果實熟成緩慢，孕育出咖啡甜感與高密度，風味也更加醇香豐富。
+                                    　　莊園對於自然生態環境友好，致力維護莊園動植物豐富的多樣性，時常有藍腹鷴、台灣獼猴、山羌前來拜訪咖啡叢林。
+                                </h6>
+                            </div>
+                        </div>
+
+                    </li>
+
+                    <li class="content" id="page2">
+                        <h3><br></h3>
+                        <div class="bb-bookblock">
+                            <div class="bb-item"><img src="images/景點image/2_1.jpg" alt="image05" /></div>
+                            <div class="bb-item"><img src="images/景點image/2_2.jpg" alt="image06" /></div>
+                            <div class="bb-item"><img src="images/景點image/2_3.jpg" alt="image07" /></div>
+                            <div class="bb-item"><img src="images/景點image/2_4.jpg" alt="image08" /></div>
+                        </div>
+                        <div class="caption-container">
+                            <div class="caption">
+                                <a href="https://www.dreamriverliu.com" target="_blank">
+                                    <h4>築夢森居</h4>
+                                </a>
+                                <a href="https://maps.app.goo.gl/DEjuTzFFdypKUVPo7" target="_blank">
+                                    <h5>606嘉義縣中埔鄉深坑村內灣2號</h5>
+                                </a>
+                                <h6>
+                                    　　有許多親子體驗項目，夏日漂漂河活動、生態五感體驗、手作窯烤Pizza
+                                    DIY、攀岩體驗、攀樹體驗、手洗愛玉DIY、昆蟲標本製作DIY、草頭娃娃DIY、精油芳療體驗、森林療癒，等多項體驗，讓大人及小朋友可以在園區內徹底放鬆。
+                                </h6>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="content" id="page3">
+                        <h3><br></h3>
+                        <div class="bb-bookblock">
+                            <div class="bb-item"><img src="images/景點image/3_1.jpg" alt="image9" /></div>
+                            <div class="bb-item"><img src="images/景點image/3_2.jpg" alt="image10" /></div>
+                            <div class="bb-item"><img src="images/景點image/3_3.jpg" alt="image11" /></div>
+                            <div class="bb-item"><img src="images/景點image/3_4.jpg" alt="image12" /></div>
+                        </div>
+                        <div class="caption-container">
+                            <div class="caption">
+                                <a href="https://ling-lan.com" target="_blank">
+                                    <h4>鈴蘭碗粿</h4>
+                                </a>
+                                <a href="https://maps.app.goo.gl/3JTsPVS9rmgCinjv5" target="_blank">
+                                    <h5>606嘉義縣中埔鄉同仁42-4號</h5>
+                                </a>
+                                <h6>
+                                    　　嘉義中埔的知名台式早餐店，獲得許多嘉義在地人與各地老饕慕名而來！老闆娘堅持選用嘉南平原產量稀少的契作在來米，用心炊出的碗粿實料Q彈，以「待客人即是家人」的心，每日製作新鮮的美味碗粿。
+                                </h6>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="content" id="page4">
+                        <h3><br></h3>
+                        <div class="bb-bookblock">
+                            <div class="bb-item"><img src="images/景點image/4_1.jpg" alt="image13" /></div>
+                            <div class="bb-item"><img src="images/景點image/4_2.jpg" alt="image14" /></div>
+                            <div class="bb-item"><img src="images/景點image/4_3.jpg" alt="image15" /></div>
+                            <div class="bb-item"><img src="images/景點image/4_4.jpg" alt="image16" /></div>
+                        </div>
+                        <div class="caption-container">
+                            <div class="caption">
+                                <a href="https://dgc.com.tw" target="_blank" alt="官網">
+                                    <h4>獨角仙休閒農場</h4>
+                                </a>
+                                <a href="https://maps.app.goo.gl/qXgZK1y8PVKPgbZm6" target="_blank">
+                                    <h5>606嘉義縣中埔鄉45號</h5>
+                                </a>
+                                <h6>
+                                    　　門票100元（場內可折抵）。農場內可以餵食小動物，滑草跟有遮陽的沙坑與溜滑梯都是小孩最愛。小朋友光跑上滑下就可以耗去不少體力，玩滑草場一定要用滑草板，若沒有攜帶，現場有販售。全年無休，過年也開放。
+                                </h6>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="content" id="page5">
+                        <h3><br></h3>
+                        <div class="bb-bookblock">
+                            <div class="bb-item"><img src="images/景點image/5_1.jpg" alt="image17" /></div>
+                            <div class="bb-item"><img src="images/景點image/5_2.jpg" alt="image18" /></div>
+                            <div class="bb-item"><img src="images/景點image/5_3.jpg" alt="image19" /></div>
+                            <div class="bb-item"><img src="images/景點image/5_4.jpg" alt="image20" /></div>
+                        </div>
+                        <div class="caption-container">
+                            <div class="caption">
+                                <a href="https://tbocc.cyhg.gov.tw/Sight_Content.aspx?n=100317&s=513799"
+                                    target="_blank">
+                                    <h4>粉牛樂園</h4>
+                                </a>
+                                <a href="https://maps.app.goo.gl/wGQvUsXPmySfXXVc7" target="_blank">
+                                    <h5>606嘉義縣中埔鄉同仁42-4號</h5>
+                                </a>
+                                <h6>
+                                    　　園區內有可愛動物區，也有些兒童遊樂設施。標本區展示一些昆蟲標本，讓遊客觀賞。蜜戀花園有不少蝴蝶，園方在2015年11月新建一座粉色浪漫的賞蝶屋，期望遊客能在不打擾蝴蝶下賞蝶。也有DIY體驗，可以帶著小朋友一起手作。玩一整天的話，有提供餐點，餐點不貴，都在200元左右，很適合親子一起出遊。
+                                </h6>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="content" id="page6">
+                        <h3><br></h3>
+                        <div class="bb-bookblock">
+                            <div class="bb-item"><img src="images/景點image/6_1.jpg" alt="image21" /></div>
+                            <div class="bb-item"><img src="images/景點image/6_2.png" alt="image22" /></div>
+                            <div class="bb-item"><img src="images/景點image/6_3.jpg" alt="image23" /></div>
+                            <div class="bb-item"><img src="images/景點image/6_4.jpg" alt="image24" /></div>
+                        </div>
+                        <div class="caption-container">
+                            <div class="caption">
+                                <a href="http://www.goodmoni.com.tw/about.asp" target="_blank">
+                                    <h4>旭嶺農場</h4>
+                                </a>
+                                <a href="https://maps.app.goo.gl/tSZKK13J6LCD1BTb6" target="_blank">
+                                    <h5>606嘉義縣中埔鄉社口村16鄰28號</h5>
+                                </a>
+                                <h6>
+                                    　　全台黑木耳的最大產區，新鮮的黑木耳口感較軟嫩，乾燥的口感較脆，不論是煮湯、炒菜、煮涼飲，黑木耳都是入菜的好伙伴！711黑木耳、鼎泰豐的黑木耳皆使用他家之產品，也可以體驗現場採摘黑木耳喔！
+                                </h6>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="content" id="page7">
+                        <h3><br></h3>
+                        <div class="bb-bookblock">
+                            <div class="bb-item"><img src="images/景點image/7_1.png" alt="image25" /></div>
+                            <div class="bb-item"><img src="images/景點image/7_2.webp" alt="image26" /></div>
+                            <div class="bb-item"><img src="images/景點image/7_3.jpg" alt="image27" /></div>
+                            <div class="bb-item"><img src="images/景點image/7_4.jpg" alt="image28" /></div>
+                        </div>
+                        <div class="caption-container">
+                            <div class="caption">
+                                <h4>中埔阿婆烤玉米</h4>
+                                <a href="https://maps.app.goo.gl/rrYpN5EQJygCzGKd7" target="_blank">
+                                    <h5>606嘉義縣中埔鄉中正路676號</h5>
+                                </a>
+                                <h6>
+                                    　　價格平均一隻在55-65左右，老字號，真的慢火細烤，又香又入味，價格又親切，可先打電話預訂，以免等太久喔！
+                                </h6>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="content" id="page8">
+                        <h3><br></h3>
+                        <div class="bb-bookblock">
+                            <div class="bb-item"><img src="images/景點image/8_1.JPG" alt="image29" /></div>
+                            <div class="bb-item"><img src="images/景點image/8_2.JPG" alt="image30" /></div>
+                            <div class="bb-item"><img src="images/景點image/8_3.JPG" alt="image31" /></div>
+                            <div class="bb-item"><img src="images/景點image/8_4.jpg" alt="image32" /></div>
+                        </div>
+                        <div class="caption-container">
+                            <div class="caption">
+                                <h4><a href=" https://go1356.com.tw" target="_blank">果然茶香觀光園區</a></h4>
+                                <a href="https://maps.app.goo.gl/a28NfmdYhHt4NWBw5" target="_blank">
+                                    <h5>嘉義縣中埔鄉義仁村樹頭埔4-18號</h5>
+                                </a>
+                                <h6>
+                                    　　主要是生產水果乾、茶品為主，門票100元可全額折抵消費，園區有一些兒童設施免費玩，有槌球、玩沙、跳格子、迷宮、戲水池、彩繪藝術、冰淇淋、溜滑梯遊具組、釣魚、撿雞蛋等；另有收費設施：小火車與賓士卡丁車，玩累了還有室內用餐區，點個飲料與小吃休息一下，是個蠻可愛有趣的景點哦
+                                    ！
+                                </h6>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="content" id="page9">
+                        <h3><br></h3>
+                        <div class="bb-bookblock">
+                            <div class="bb-item"><img src="images/景點image/9_1.JPG" alt="image33" /></div>
+                            <div class="bb-item"><img src="images/景點image/9_2.JPG" alt="image34" /></div>
+                            <div class="bb-item"><img src="images/景點image/9_3.JPG" alt="image35" /></div>
+                            <div class="bb-item"><img src="images/景點image/9_4.JPG" alt="image36" /></div>
+                        </div>
+                        <div class="caption-container">
+                            <div class="caption">
+                                <h4>中埔穀倉農創園區</h4>
+                                <a href="https://maps.app.goo.gl/osbLBY9qE1Pt6r9E9" target="_blank">
+                                    <h5>606011嘉義縣中埔鄉36號</h5>
+                                </a>
+                                <h6>
+                                    　　主要為活化在地農會轉型,佔地寬敞，提供多元化服務;清水模建築中埔美術館、檜木館、休閒設施等...唯美的裝置藝術。園區中有進駐時下年輕人喜愛的星巴客，營造成全台唯一老穀倉星巴克,在最內角的地方真的有保留老穀倉原始的樣貌，用最簡單的方式去呈現。
+                                </h6>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="content" id="page10">
+                        <h3><br></h3>
+                        <div class="bb-bookblock">
+                            <div class="bb-item"><img src="images/景點image/10_1.jpg" alt="image37" /></div>
+                            <div class="bb-item"><img src="images/景點image/10_2.webp" alt="image38" /></div>
+                            <div class="bb-item"><img src="images/景點image/10_3.webp" alt="image39" /></div>
+                            <div class="bb-item"><img src="images/景點image/10_4.webp" alt="image40" /></div>
+                        </div>
+                        <div class="caption-container">
+                            <div class="caption">
+                                <a href="https://www.facebook.com/bigh168/photos" target="_blank">
+                                    <h4>蔡大頭甕烤雞</h4>
+                                </a>
+                                <a href="https://maps.app.goo.gl/Vz1xaK7tVSmo44Pj9" target="_blank">
+                                    <h5>606011嘉義縣中埔鄉頂中下街95號</h5>
+                                </a>
+                                <h6>
+                                    　　蔡家三兄弟為了一圓爸爸的心願，共同開設的餐廳。必點的招牌餐點：砂鍋魚頭、甕烤雞、苦茶油雞、筍絲焢肉、古早味脆玉筍麵，都很值得一試，餐點份量不小，建議多人一起來吃比較好點餐，而且假日人潮爆滿，一定要先訂位，沒訂位可能吃不到喔。
+                                </h6>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="content" id="page11">
+                        <h3><br></h3>
+                        <div class="bb-bookblock">
+                            <div class="bb-item"><img src="images/景點image/11_1.jpg" alt="image41" /></div>
+                            <div class="bb-item"><img src="images/景點image/11_2.jpg" alt="image42" /></div>
+                            <div class="bb-item"><img src="images/景點image/11_3.jpg" alt="image43" /></div>
+                            <div class="bb-item"><img src="images/景點image/11_4.jpg" alt="image44" /></div>
+                        </div>
+                        <div class="caption-container">
+                            <div class="caption">
+                                <h4>八掌溪畔黃金風鈴花</h4>
+                                <a href="https://maps.app.goo.gl/nuCeyCz7SM3Vd6Kv6" target="_blank">
+                                    <h5>606嘉義縣中埔鄉大義路658號</h5>
+                                </a>
+                                <h6>
+                                    　　時序進入三月，嘉義的黃花風鈴花竟然也已經迫不及待的盛開。通常於三至四月，是欣賞風鈴花最好的時機～那時整條路兩側黃橙橙一片，連綿一公里，人潮絡繹不絕，超級壯觀。
+                                </h6>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="content" id="page12">
+                        <h3><br></h3>
+                        <div class="bb-bookblock">
+                            <div class="bb-item"><img src="images/景點image/12_1.webp" alt="image45" /></div>
+                            <div class="bb-item"><img src="images/景點image/12_2.jpg" alt="image46" /></div>
+                            <div class="bb-item"><img src="images/景點image/12_3.jpg" alt="image47" /></div>
+                            <div class="bb-item"><img src="images/景點image/12_4.jpg" alt="image48" /></div>
+                        </div>
+                        <div class="caption-container">
+                            <div class="caption">
+                                <a href="https://www.facebook.com/picgather/" target="_blank">
+                                    <h4>Picgather 吾友野事</h4>
+                                </a>
+                                <a href="https://maps.app.goo.gl/nuCeyCz7SM3Vd6Kv6" target="_blank">
+                                    <h5>606嘉義縣中埔鄉大義路658號</h5>
+                                </a>
+                                <h6>
+                                    　　擁有綠色草皮，並且結合帳篷打造出露營野餐風的空間，餐飲部分有提供獨家野食Pic堡及咖啡冷飲等，另外還是寵物友善餐廳，歡迎大家攜帶心愛的寵物一同品味美食，與家人、寵物共度美好時光
+                                </h6>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="content" id="page13">
+                        <h3><br></h3>
+                        <div class="bb-bookblock">
+                            <div class="bb-item"><img src="images/景點image/13_1.jpg" alt="image45" /></div>
+                            <div class="bb-item"><img src="images/景點image/13_2.jpg" alt="image46" /></div>
+                            <div class="bb-item"><img src="images/景點image/13_3.jpg" alt="image47" /></div>
+                            <div class="bb-item"><img src="images/景點image/13_4.webp" alt="image48" /></div>
+                        </div>
+                        <div class="caption-container">
+                            <div class="caption">
+                                <a href="https://www.facebook.com/picgather/" target="_blank">
+                                    <h4>中崙溫泉</h4>
+                                </a>
+                                <a href="https://maps.app.goo.gl/nuCeyCz7SM3Vd6Kv6" target="_blank">
+                                    <h5> 606嘉義縣中埔鄉29號</h5>
+                                </a>
+                                <h6>
+                                    　　位於群山環抱的幽谷秘
+                                    營業時間為早上十點-晚上八點，是嘉義縣唯一擁有溫泉標章的溫泉休憩場所，全湯溫泉不加一般清水，原湯不回收。泉質屬於弱鹼性碳酸氫鈉氯化物泉，由石岩壁滲湧出之天然泥漿溫泉。是適合一家大小一起出遊的地方，可以在這放鬆身心，與家人共度美好時光。
+                                </h6>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <ul class="pagination modal-1">
+                <li><a href="#景點介紹" class="next" onclick="changeContent(-1)">«</a></li>
+                <li class="page-item"><a href="#景點介紹" class="page-link" onclick="showContent(1)" data-page="1"
+                        title="一品咖啡莊園">1</a>
+                </li>
+                <li class="page-item"><a href="#景點介紹" class="page-link" onclick="showContent(2)" data-page="2"
+                        title="築夢森居">2</a>
+                </li>
+                <li class="page-item"><a href="#景點介紹" class="page-link" onclick="showContent(3)" data-page="3"
+                        title="鈴蘭碗粿">3</a>
+                </li>
+                <li class="page-item"><a href="#景點介紹" class="page-link" onclick="showContent(4)" data-page="4"
+                        title="獨角仙休閒農場">4</a>
+                </li>
+                <li class="page-item"><a href="#景點介紹" class="page-link" onclick="showContent(5)" data-page="5"
+                        title="粉牛樂園">5</a>
+                </li>
+                <li class="page-item"><a href="#景點介紹" class="page-link" onclick="showContent(6)" data-page="6"
+                        title="旭嶺農場">6</a>
+                </li>
+                <li class="page-item"><a href="#景點介紹" class="page-link" onclick="showContent(7)" data-page="7"
+                        title="中埔阿婆烤玉米">7</a>
+                </li>
+                <li class="page-item"><a href="#景點介紹" class="page-link" onclick="showContent(8)" data-page="8"
+                        title="果然茶香觀光園區">8</a>
+                </li>
+                <li class="page-item"><a href="#景點介紹" class="page-link" onclick="showContent(9)" data-page="9"
+                        title="中埔穀倉農創園區">9</a>
+                </li>
+                <li class="page-item"><a href="#景點介紹" class="page-link" onclick="showContent(10)" data-page="10"
+                        title="蔡大頭甕烤雞">10</a>
+                </li>
+                <li class="page-item"><a href="#景點介紹" class="page-link" onclick="showContent(11)" data-page="11"
+                        title="八掌溪畔黃金風鈴花">11</a>
+                </li>
+                <li class="page-item"><a href="#景點介紹" class="page-link" onclick="showContent(12)" data-page="12"
+                        title="Picgather 吾友野事">12</a>
+                </li>
+                <li class="page-item"><a href="#景點介紹" class="page-link" onclick="showContent(13)" data-page="13"
+                        title="中崙溫泉">13</a>
+                </li>
+                <li><a href="#景點介紹" class="next" onclick="changeContent(1)">»</a></li>
+            </ul>
+        </div>
+        </div>
+        <a href="#天氣預報" class="button style2 down anchored">Next</a>
+    </section>
+    <section id="天氣預報">
+        <h1>天氣預報</h1>
+        <div class="container">
+
+            <div class="weather-container weather-bg">
+                <div id="week" class="week">
+                    <table>
+                        <tr>
+                            <td class="day-info today"></td>
+                            <td class="day-info"></td>
+                            <td class="day-info"></td>
+                            <td class="day-info"></td>
+                            <td class="day-info"></td>
+                            <td class="day-info"></td>
+                            <td class="day-info"></td>
+                        </tr>
+                        <tr>
+                            <td class="weather-img"></td>
+                            <td class="weather-img"></td>
+                            <td class="weather-img"></td>
+                            <td class="weather-img"></td>
+                            <td class="weather-img"></td>
+                            <td class="weather-img"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <a href="#留言板" class="button style2 down anchored">Next</a>
+    </section>
+
+
+    <!-- Disqus留言板 -->
+    <section id="留言板">
+        <div class="container">
+            <h1>留言板</h1>
+            <!-- Add the background effect div here -->
+            <div class="background-effect"></div>
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = "https://tytytty.online/";
+                    this.page.identifier = "https://tytytty.online/";
+                };
+
+                (function () {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://zhong-bu-go-13.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by
+                    Disqus.</a></noscript>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        連絡信箱：<a href="mailto:網頁@gmail.com">網頁@gmail.com</a><br>
+        本網頁最佳設定為全螢幕
+    </footer>
+
+    <div id="scrollToTopBtn" class="scroll-to-top-btn">
+        <img src="images/up.png" alt="Scroll to Top">
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/jquery.bookblock.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/天氣.js"></script>
+    <script src="js/spot.js"></script>
+    <script src="js/pic-mover.js"></script>
+    <script src="js/route.js"></script>
+    <script src="js/跳出視窗.js"></script>
+
+
+    <!-- 背景的線 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-nest.js/2.0.4/canvas-nest.js" color="153,153,255"
+        opacity="0.9" zIndex="15" count="199"
+        integrity="sha512-P+NGabN/TJDOnCVOFJO+E06TBm4i+M8dTT91lWg/8UpwLrzicEXIypmABPpA47D0x6r+yxFHjYIZKWhc1h7xlQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script>
+            document.addEventListener('DOMContentLoaded', function () {
+            var scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+            // 監聽捲動事件
+            window.addEventListener('scroll', function () {
+                // 如果滾動到最下層，顯示按鈕；否則隱藏按鈕
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    scrollToTopBtn.style.display = 'block';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            });
+
+            // 監聽按鈕點擊事件，捲動到頁面頂部
+            scrollToTopBtn.addEventListener('click', function () {
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
