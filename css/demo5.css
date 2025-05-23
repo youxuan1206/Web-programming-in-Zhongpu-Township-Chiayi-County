@@ -1,0 +1,1017 @@
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    text-align: center;
+    height: 100%;
+    background-color: #FFFFF4;
+}
+
+h1 {
+    font-size: 2.3em;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+h3 {
+    color: #0abab5;
+    font-size: 1.5em;
+    margin-top: 0.8em;
+    margin-bottom: 0;
+}
+
+/* 使用媒體查詢設定字體大小的範圍 */
+@media only screen and (max-width: 768px) {
+    h3 {
+        font-size: 1.3em; /* 在螢幕寬度小於或等於 768px 時，字體縮小至 1.5em */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    h3 {
+        font-size: 1em; /* 在螢幕寬度小於或等於 480px 時，字體縮小至 1.3em */
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    h3 {
+        font-size: 0.9em; /* 在螢幕寬度小於或等於 320px 時，字體縮小至 1.1em */
+    }
+}
+
+
+p1{
+    font-size: 1em;  
+}
+
+/* 使用媒體查詢設定字體大小的範圍 */
+@media only screen and (max-width: 768px) {
+    h3 {
+        font-size: 0.7em; /* 在螢幕寬度小於或等於 768px 時，字體縮小至 1.5em */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    h3 {
+        font-size: 0.4em; /* 在螢幕寬度小於或等於 480px 時，字體縮小至 1.3em */
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    h3 {
+        font-size: 0.2rem; /* 在螢幕寬度小於或等於 320px 時，字體縮小至 1.1em */
+    }
+}
+
+
+/* 內容文本的樣式，可以根據需要調整 */
+.content-text {
+    margin-bottom: 20px; /* 增加內容底部間距 */
+}
+
+
+.container {
+    flex-grow: 1;
+    position: relative;
+    margin-top: 25px;
+}
+
+.button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+
+    -moz-transition: background-color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
+
+    cursor: pointer;
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* 讓箭頭水平置中 */
+
+    width: 5em;
+    height: 5em;
+    border-radius: 3em 3em 0 0;
+    border: solid 2px #d9e9f8;
+    border-bottom-width:0 ;
+    
+    background-image: url("../images/dark-arrow.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-indent: -10em;
+    overflow: hidden;
+    background-color: rgb(206, 219, 232);
+}
+
+.button:hover {
+    background-color:  #bfcee0; /* 設定懸停時的顏色 */
+}
+
+/* Header */
+#header {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: rgba(184, 208, 202, 0.95);
+    height: 3em;
+    line-height: 3em;
+    box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.1);
+}
+
+
+#header h1 {
+    position: absolute;
+    left: 0.5em;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    display: block;
+    font-size: 2em;
+    line-height: 1.3;
+}
+
+#header h1 a {
+    color: inherit;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    cursor: pointer;
+    letter-spacing: -0.0325em;
+}
+
+
+#header nav {
+    position: absolute;
+    right: 0.5em;
+    top: 0;
+    height: 3em;
+    line-height: 3em;
+    display: flex;
+    align-items: center;
+}
+
+#header nav ul {
+    margin: 0;
+    list-style: none;
+}
+
+/*導覽列文字（推薦路線、景點介紹......）*/
+#header nav ul li {
+    display: inline-block;
+    margin-left: 0.5em;
+}
+
+#header nav ul li:hover {
+    color: #999;
+    /* 懸停時的顏色 */
+    font-size: 1.1em;
+    /* 調整字體大小 */
+}
+
+
+#header nav ul li a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    height: 3em;
+    line-height: 3em;
+    padding: 0 0.5em 0 0.5em;
+    outline: 0;
+}
+
+/* Intro */
+#intro {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.intro-content{
+    z-index: 20;
+    color: rgba(245, 222, 179, 0.7);
+    justify-content: center;
+    user-select: none;
+}
+
+#intro p {
+    font-size: 1.3em;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#intro footer {
+    margin-top: 20px;
+}
+
+#banner {  
+    position:absolute;
+    width: 100%; 
+    height: 100%;
+    overflow: hidden;
+  }
+  
+#ul {
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* 讓 li 元素水平排列 */
+    transition: transform 0.5s ease-in-out; /* 添加平滑過渡效果 */
+}
+  
+#ul li {
+    flex: 0 0 100%; /* 每個輪播項目佔滿整個容器寬度 */
+    opacity: 55%;
+}
+  
+#ul img {
+    height: 100%;
+    width: 100%;
+}
+  
+#left,
+#right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    opacity:0.5;
+    padding: 10px;
+    user-select: none; /* 禁止選中文本 */
+    transition: opacity 0.3s ease;
+}
+  
+#left {
+    left: 0;
+}
+  
+#right {
+    right: 0;
+}
+  
+#left:hover,
+#right:hover {
+    opacity: 1; /* 鼠標懸停時完全顯示箭頭 */
+  }
+
+.more {
+    width: 100px;
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+    background-color: #98c593;
+    border: solid 2px #d9e9f8;
+    border-radius: 3em;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.more:hover {
+    background-color: #75a07c;
+    transform: scale(1.1); /* 放大效果 */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* 白色陰影 */
+}
+
+.more:active {
+    transform: scale(0.9); /* 點擊時縮小效果 */
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.7); /* 點擊時白色內陰影 */
+}
+
+/*map*/
+#推薦路線{
+    height: 100vh;
+}
+.map-recommend {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.map {
+    width: 48vw;
+    position: relative;
+    margin-right: 20px;
+    border-radius: 70px;
+}
+
+.map-img{
+    width: 100%;
+    height: 100%;
+}
+
+svg {
+    position: absolute;
+    top: 3px;
+    left: 0;
+}
+
+.recommend {
+    width: 35vw;
+    height: 35vw;
+    position: relative;
+}
+
+.map-path {
+    fill: #2894ff;
+    stroke: #3c3c3c;
+    stroke-width: 5;
+    cursor: pointer;
+}
+
+.map-path:hover {
+    fill: #ff5151;
+    transform: translate(-5px, -5px);
+}
+
+
+.route {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 10;
+    stroke-dasharray: 10, 10;
+    stroke-dashoffset: 103;
+    stroke-opacity: 1;
+  }
+  
+.circle {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 10;
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    stroke-opacity: 1;
+    z-index: -1;
+}
+
+/* 將 .content-text 包裹在具有固定高度的視窗內 */
+.content-window {
+    overflow-y: auto; /* 垂直方向滾動條，僅在內容溢出時顯示 */
+    max-height: 40vh; /* 設定視窗最大高度，可以根據需要調整 */
+}
+
+@media screen and (min-height:900px){
+    .content-window {
+        overflow-y: auto; /* 垂直方向滾動條，僅在內容溢出時顯示 */
+        max-height: 700px;
+    }
+    .recommend {
+        height: 700px;
+        position: relative;
+    }
+}
+
+
+.router {
+    overflow: hidden;
+}
+
+.router ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    border-bottom: 1px solid #ccc; /* 下半部橫線區隔 */
+    width: 100%; /* 假設父級寬度為100% */
+}
+
+li#content1,li#content2{
+    margin-right:1.5%;
+}
+
+.router li {
+    float: left;
+    display: block;
+    background-color: #ffffff;
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    position: relative;
+    border: 1px solid #ccc; /* 每個項目右邊的外框 */
+    border-top-left-radius: 10px; /* 左上角的圓角 */
+    border-top-right-radius: 10px; /* 右上角的圓角 */
+    width: 32.33%; /* 設置寬度为父級寬度的1/3 */
+    box-sizing: border-box; /* 讓編框和填充不會增加寬度 */
+}
+
+  
+.router li:hover {
+    background-color: #0abab5;
+    cursor:pointer;
+}
+  
+  
+.content-text {
+    display: none;
+    text-align: center;
+}
+  
+.content-text.active {
+    display: block;
+}
+  
+.content-text ul {
+    list-style-type: none;
+    text-align: left;
+    padding: 0;
+}
+  
+.content-text ul li {
+    margin-bottom: 5px;
+}
+  
+#region-info {
+    z-index: 10;
+    display: none;
+    position: absolute;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+#info-content {
+    z-index: 10;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    position: relative;
+}
+
+#info-text {
+    z-index: 10;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    color: #333333;
+}
+
+
+.separator {
+    z-index: 10;
+    height: 2px;
+    background-color: #333;
+    border: none;
+    margin: 10px 0;
+
+}
+
+#info-image {
+    z-index: 10;
+    border: 1px solid #000;
+    border-radius: 5px;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+/*景點介紹*/
+
+section#推薦路線,section#天氣預報 {
+    height: 100vh;
+    background-color: #F5FFFA;
+    display: flex;
+    flex-direction: column;
+    background-position:bottom;
+    background-image: url(../images/farm.png);
+    background-repeat: repeat-x;
+    background-size:90% 90%;
+}
+
+section#景點介紹{
+    height: 100vh;
+    background-color: #eff0e2;
+    display: flex;
+    flex-direction: column;
+    background-position:right bottom;
+    background-image: url(../images/景點介紹.png);
+    background-repeat:no-repeat;
+    background-size:15% auto;
+
+
+}
+section#留言板{
+    background-color: #eff0e2;
+    display: flex;
+    flex-direction: column;
+}
+
+/*景點介紹翻頁*/
+#景點介紹 img{
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width:900px){
+    .spotcontent {
+        overflow-x: auto; /* 水平方向滾動條，僅在內容溢出時顯示 */
+    }
+}
+
+@media screen and (min-height:900px){
+    .main.clearfix {
+        margin-top: 8%;
+    }
+}
+
+ul.bb-custom-grid {
+    list-style: none;
+    margin: 0 auto 0px auto;
+    padding: 0;
+    max-width: 900px;
+    display: block;
+}
+
+ul.bb-custom-grid:before,
+ul.bb-custom-grid:after {
+    content: " ";
+    display: table;
+}
+
+ul.bb-custom-grid:after {
+    clear: both;
+}
+
+/* 結束浮動元素 */
+
+ul.bb-custom-grid li {
+    float: left;
+    top:-20px;
+    width: 405px;
+    height: 370px;
+    padding: 10px 10px 15px 15px;
+    background: #fff;
+    position: relative;
+    box-sizing: content-box;
+    margin-bottom: 0px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+ul.bb-custom-grid li:nth-child(odd) {
+    margin-right: 20px;
+}
+
+ul.bb-custom-grid li:before,
+ul.bb-custom-grid li:after {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    height: 20%;
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+}
+
+ul.bb-custom-grid li:after {
+    right: 10px;
+    left: auto;
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+}
+
+ul.bb-custom-grid li a {
+    display: block;
+}
+
+ul.bb-custom-grid li h3 {
+    color: #9a9b92;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 35px;
+    letter-spacing: 1px;
+}
+
+ul.bb-custom-grid nav {
+    text-align: center;
+    margin-top: 12px;
+    padding-bottom: 5px;
+}
+
+ul.bb-custom-grid nav span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    margin: 3px;
+    cursor: pointer;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 1px rgba(255, 255, 255, 0.9);
+}
+
+/*介紹文字排版*/
+.caption-container {
+    max-width: 400px;
+    height: 395px; 
+    position: absolute;
+    top: 0px;
+    right: -400px;
+    background-color:#fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* 10px 是陰影的垂直偏移 */
+}
+
+/*景點介紹標題*/
+.caption-container h4 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+/*景點介紹地點*/
+.caption-container h5 {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #9a9b92;
+}
+
+/*景點介紹詳細說明*/
+.caption-container h6 {
+    font-size: 17px;
+    color: #888080;
+}
+
+.caption h4,
+.caption h5,
+.caption h6 {
+    margin: 5px;
+}
+
+a {
+    text-decoration: none;
+    /* 移除連結的下划線 */
+    color: inherit;
+    /* 使用繼承的顏色，保持和父元素一致 */
+}
+
+a:hover {
+    text-decoration: underline;
+    /* 滑鼠在上方時顯示下划線 */
+}
+
+/*頁數導覽頁排版*/
+.pagination {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.pagination li {
+    display: inline;
+    text-align: center;
+}
+
+/* 當跳轉到那頁時，那頁導覽頁要變顏色 */
+.pagination li.page-item:nth-child(n+2) a.active {
+    cursor: default;
+    background-color: darkgray;
+    /* 深灰底色 */
+    color: #fff;
+    /* 文字顏色 */
+    border: 1px solid darkgray;
+    /* 邊框顏色 */
+}
+
+.pagination a {
+    float: left;
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 5px 12px;
+    color: #000;
+    /* 導覽頁字是黑色 */
+    margin-left: -1px;
+    border: 1px solid transparent;
+    line-height: 1.5;
+}
+
+.pagination a:hover {
+    cursor: pointer;
+}
+
+.pagination a.active {
+    cursor: default;
+}
+
+.pagination a:active {
+    outline: none;
+}
+
+.page-item {
+    margin: 0;
+}
+
+.page-link {
+    display: block;
+    padding: 10px;
+    background-color: #ddd;
+    text-decoration: none;
+    color: #333;
+}
+
+.content {
+    display: none;
+    margin-top: 20px;
+}
+
+.active {
+    display: block;
+}
+
+/*最右邊導覽頁要圓角*/
+.modal-1 li:first-child a {
+    -moz-border-radius: 6px 0 0 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 100px 0 0 100px;
+}
+
+/*最左邊導覽頁要圓角*/
+.modal-1 li:last-child a {
+    -moz-border-radius: 0 6px 6px 0;
+    -webkit-border-radius: 0;
+    border-radius: 0 100px 100px 0;
+}
+
+.modal-1 a {
+    border-color: #ddd;
+    color: #000;
+    background: #fff;
+}
+
+.modal-1 a:hover {
+    background: #eee;
+}
+
+/*導覽頁點下去的顏色*/
+.modal-1 a.active,
+.modal-1 a:active {
+    border-color: rgb(66, 244, 179);
+    background: rgb(66, 244, 179);
+    color: #fff;
+}
+
+.content {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.content.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/*天氣預報*/
+#天氣預報 h1{
+    padding-top:25px;
+}
+
+#天氣預報 .container{
+    margin-top:0;
+    position: relative; /* ★ */
+    display: flex; /* ★ */
+    align-items: center; /* ★ */
+}
+
+.weather-bg {
+    background-color: rgb(184, 208, 202);
+    /*天氣預報背景色*/
+}
+
+.weather_now,
+.week {
+    margin: 10px;
+}
+
+.weather_now,
+.week {
+    flex: 1;
+}
+
+.weather_now {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    overflow-x: auto;
+    margin: 0px;
+}
+
+td {
+    border: none;
+    text-align: center;
+    padding: 10px;
+}
+
+.first-td {
+    /*設定第一格為整體表格40%*/
+    width: 40%;
+}
+
+.other-tds {
+    /*其他星期平均分配寬度*/
+    width: 12%;
+}
+
+.weather-img {
+    background: none;
+    /*晴時多雲等圖*/
+    width: 100%;
+    height: auto;
+}
+
+.weather-row {
+    background-color: rgb(76, 130, 175);
+    color: white;
+    font-weight: bold;
+}
+
+.week-description {
+    font-size: 1.5vw;  /* 使用vw作為相對單位 */
+}
+
+.today-weather{
+    font-size: 1.5vw; /* 使用vw作為相對單位 */
+}
+
+.day-info {
+    position: relative;
+}
+
+.day-info:hover::after {
+    content: attr(data-description) "\A" attr(data-temp) "\A" attr(data-other-info);
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: pre-line;
+    z-index: 999;
+    max-width: 200px; /* 設定最大寬度 */
+    left: var(--info-box-left); /* 使用 CSS 變數設定 left 屬性 */
+    top: var(--info-box-top); /* 使用 CSS 變數設定 top 屬性 */
+    font-size: 10px; /* 設定字體大小 */
+}
+
+@media (max-width: 768px) {
+    /*讓天氣預報表格依視窗大小做調整，寬度太小字會往下移*/
+    #week {
+        max-height: none;
+        overflow-y: visible;
+    }
+}
+
+/*留言板*/
+#留言板 {
+    background-color: #F5FFFA;
+}
+
+#留言板 h2{
+    padding-top: 15px;
+}
+
+div#disqus_thread {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+/* Footer */
+#footer {
+    flex-shrink: 0;
+    align-items: flex-start; /* 左對齊，對齊點在頂端 */
+    justify-content: space-between;
+    position: relative;
+    margin: 0;
+    line-height: 1.5em;
+    padding: 1.2em;
+    background: #39454b;
+    color: rgba(185, 186, 187, 0.5);
+    overflow: hidden;
+}
+
+#footer .contact-info {
+    display: block;
+}
+
+#footer a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    align-items: flex-start; /* 左對齊 */
+    
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+
+/*跳出影片的視窗*/
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    transition: opacity 0.3s ease; /* 過渡效果，持續 0.3 秒，使用 ease 函数 */
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 800px;
+    height: 70%;
+    max-height: 500px;
+    overflow: auto;
+}
+
+.modal-content video {
+    height: 100%;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* 向上小箭頭*/
+.scroll-to-top-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(209, 234, 252);
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-to-top-btn img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+}
+
+
+
+
+
